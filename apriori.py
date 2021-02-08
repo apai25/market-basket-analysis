@@ -13,7 +13,7 @@ added_item = [list(result[0])[1] for result in results]
 support = [result[1] for result in results]
 confidence = [result[2][0][2] for result in results]
 lift = [result[2][0][3] for result in results]
-final_results = list(zip(lhs, rhs, support, confidence, lift))
+final_results = list(zip(base_item, added_item, support, confidence, lift))
 
-results_in_dataframe = pd.DataFrame(final_results, columns=['Left Hand Side', 'Right Hand Side', 'Support', 'Confidence', 'Lift'])
+results_in_dataframe = pd.DataFrame(final_results, columns=['Base Item', 'Added Item', 'Support', 'Confidence', 'Lift'])
 results_in_dataframe.to_csv('results.csv')
